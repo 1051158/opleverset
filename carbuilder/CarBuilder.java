@@ -9,6 +9,8 @@ public class CarBuilder implements CarBuilderInterface {
     private WinterTireFactory winterTireFactory;
     private SummerTireFactory summerTireFactory;
     private Tire tire;
+    private String color;
+    private String finish;
     private String type;
 
     public CarBuilder() {
@@ -27,6 +29,8 @@ public class CarBuilder implements CarBuilderInterface {
 
     @Override
     public CarBuilderInterface setPaint(String color, String finish) {
+        this.color = color;
+        this.finish = finish;
         return this;
     }
 
@@ -55,15 +59,15 @@ public class CarBuilder implements CarBuilderInterface {
     public Car build() {
         switch (type) {
             case "Sedan":
-                return new Sedan(engine, tire);
+                return new Sedan(engine, tire, color, finish);
             case "Cabrio":
-                return new Cabrio(engine, tire);
+                return new Cabrio(engine, tire, color, finish);
             case "Coupe":
-                return new Coupe(engine, tire);
+                return new Coupe(engine, tire, color, finish);
             case "Hatchback":
-                return new Hatchback(engine, tire);
+                return new Hatchback(engine, tire, color, finish);
             case "SUV":
-                return new SUV(engine, tire);
+                return new SUV(engine, tire, color, finish);
             default:
                 throw new IllegalArgumentException("Invalid car type");
         }

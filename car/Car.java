@@ -20,6 +20,6 @@ public interface Car {
 
     void setPaint(String color, String finish);
 
-    void getPaint();
+    String getPaint();
 
 }

@@ -10,9 +10,10 @@ public abstract class BaseCar implements Car {
     private String color;
     private String finish;
 
-    public BaseCar(Engine engine, Tire tire) {
+    public BaseCar(Engine engine, Tire tire, String color, String finish) {
         setEngine(engine);
         setTire(tire);
+        setPaint(color, finish);
     }
 
     @Override
@@ -42,8 +43,8 @@ public abstract class BaseCar implements Car {
     }
 
     @Override
-    public void getPaint() {
-        System.out.println("Color: " + this.color + ", Finish: " + this.finish);
+    public String getPaint() {
+        return this.color + " " + this.finish;
     }
 
     @Override

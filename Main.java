@@ -9,6 +9,7 @@ public class Main {
         Car sedan = builder.setType("Sedan")
                         .setTire("Summer", RimStyle.classic)
                         .setEngine(new FossilEngine())
+                        .setPaint("Red", "Matte")
                         .build();
         System.out.println(sedan.getCost());
         System.out.println(sedan.getDescription());
