@@ -17,4 +17,9 @@ public interface Car {
     double getCost();
 
     void setCost(double newCost);
+
+    void setPaint(String color, String finish);
+
+    void getPaint();
+
 }

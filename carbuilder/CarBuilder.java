@@ -16,11 +16,17 @@ public class CarBuilder implements CarBuilderInterface {
         this.summerTireFactory = new SummerTireFactory();
         setEngine(new FossilEngine());
         setTire("Summer", RimStyle.classic);
+        setPaint("Black", "Metallic");
     }
 
     @Override
     public CarBuilderInterface setEngine(Engine engine) {
         this.engine = engine;
+        return this;
+    }
+
+    @Override
+    public CarBuilderInterface setPaint(String color, String finish) {
         return this;
     }
 

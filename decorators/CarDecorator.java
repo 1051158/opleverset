@@ -41,4 +41,14 @@ public abstract class CarDecorator implements Car {
     public void setTire(Tire tire) {
         decoratedCar.setTire(tire);
     }
+
+    @Override
+    public void setPaint(String color, String finish) {
+        decoratedCar.setPaint(color, finish);
+    }
+
+    @Override
+    public void getPaint() {
+        decoratedCar.getPaint();
+    }
 }
