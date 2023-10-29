@@ -7,7 +7,7 @@ import color.Color;
 public class Coupe extends BaseCar {
 
     public Coupe(Engine engine, Tire tire, Color color) {
-        super(engine, tire);
+        super(engine, tire, color);
         setCost(10000.00);
     }
 

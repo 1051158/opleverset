@@ -2,6 +2,7 @@ package car;
 
 import engines.Engine;
 import tire.Tire;
+import color.Color;
 
 public interface Car {
     String getDescription();
@@ -13,6 +14,10 @@ public interface Car {
     Tire getTire();
 
     void setTire(Tire tire);
+
+    Color getColor();
+
+    void setColor(Color color);
 
     double getCost();
 

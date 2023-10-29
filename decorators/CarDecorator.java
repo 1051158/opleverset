@@ -3,6 +3,7 @@ package decorators;
 import car.Car;
 import engines.Engine;
 import tire.Tire;
+import color.Color;
 
 public abstract class CarDecorator implements Car {
     protected Car decoratedCar;
@@ -16,6 +17,7 @@ public abstract class CarDecorator implements Car {
     public double getCost() {
         return decoratedCar.getCost();
     }
+
     @Override
     public void setCost(double newCost) {
         decoratedCar.setCost(newCost);
@@ -30,6 +32,7 @@ public abstract class CarDecorator implements Car {
     public void setEngine(Engine engine) {
         decoratedCar.setEngine(engine);
     }
+
     @Override
     public Tire getTire() {
         return decoratedCar.getTire();
@@ -38,5 +41,15 @@ public abstract class CarDecorator implements Car {
     @Override
     public void setTire(Tire tire) {
         decoratedCar.setTire(tire);
+    }
+
+    @Override
+    public Color getColor() {
+        return decoratedCar.getColor();
+    }
+
+    @Override
+    public void setColor(Color color) {
+        decoratedCar.setColor(color);
     }
 }

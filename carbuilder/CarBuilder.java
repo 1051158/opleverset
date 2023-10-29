@@ -15,7 +15,6 @@ public class CarBuilder {
         setEngine(new FossilEngine());
         setTire("Summer", RimStyle.classic);
         setColor("Blue", Finish.matte);
-
     }
 
     public CarBuilder setEngine(Engine engine) {
