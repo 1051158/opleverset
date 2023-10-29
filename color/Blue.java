@@ -22,4 +22,9 @@ public class Blue implements Color {
     public Finish getFinish() {
         return finish;
     }
+
+    @Override
+    public String toString() {
+        return getColor() + " " + getFinish() + " finish";
+    }
 }
