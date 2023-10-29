@@ -1,10 +1,10 @@
 package carbuilder;
 
-import car.*;
-import engines.*;
 import tire.*;
+import engines.*;
+import car.*;
 
-public class CarBuilder {
+public class CarBuilder implements CarBuilderInterface {
     private Engine engine;
     private WinterTireFactory winterTireFactory;
     private SummerTireFactory summerTireFactory;
@@ -18,12 +18,14 @@ public class CarBuilder {
         setTire("Summer", RimStyle.classic);
     }
 
-    public CarBuilder setEngine(Engine engine) {
+    @Override
+    public CarBuilderInterface setEngine(Engine engine) {
         this.engine = engine;
         return this;
     }
 
-    public CarBuilder setTire(String tireSeason, RimStyle rimStyle) {
+    @Override
+    public CarBuilderInterface setTire(String tireSeason, RimStyle rimStyle) {
         switch (tireSeason) {
             case "Summer":
                 this.tire = summerTireFactory.createTire(rimStyle);
@@ -37,11 +39,13 @@ public class CarBuilder {
         return this;
     }
 
-    public CarBuilder setType(String type) {
+    @Override
+    public CarBuilderInterface setType(String type) {
         this.type = type;
         return this;
     }
 
+    @Override
     public Car build() {
         switch (type) {
             case "Sedan":
