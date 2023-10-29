@@ -1,7 +1,6 @@
 package decorators;
 
 import car.Car;
-import engines.Engine;
 
 public class HeatedSeats extends CarDecorator {
     public HeatedSeats(Car decoratedCar) {

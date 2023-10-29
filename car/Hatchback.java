@@ -2,10 +2,11 @@ package car;
 
 import engines.Engine;
 import tire.Tire;
+import color.Color;
 
 public class Hatchback extends BaseCar {
 
-    public Hatchback(Engine engine, Tire tire) {
+    public Hatchback(Engine engine, Tire tire, Color color) {
         super(engine, tire);
         setCost(8000.00);
     }
@@ -15,4 +16,3 @@ public class Hatchback extends BaseCar {
         return "Hatchback model, " + this.getEngine().getEngineType() + ", " + this.getTire();
     }
 }
-

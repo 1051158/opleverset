@@ -1,7 +1,6 @@
 package decorators;
 
 import car.Car;
-import engines.Engine;
 
 public class Automatic extends CarDecorator {
     public Automatic(Car decoratedCar) {

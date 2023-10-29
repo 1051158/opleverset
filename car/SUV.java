@@ -2,10 +2,11 @@ package car;
 
 import engines.Engine;
 import tire.Tire;
+import color.Color;
 
 public class SUV extends BaseCar {
 
-    public SUV(Engine engine, Tire tire) {
+    public SUV(Engine engine, Tire tire, Color color) {
         super(engine, tire);
         setCost(12000.00);
     }
@@ -15,4 +16,3 @@ public class SUV extends BaseCar {
         return "SUV model, " + this.getEngine().getEngineType() + ", " + this.getTire();
     }
 }
-

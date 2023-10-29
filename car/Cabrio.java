@@ -2,10 +2,11 @@ package car;
 
 import engines.Engine;
 import tire.Tire;
+import color.Color;
 
 public class Cabrio extends BaseCar {
 
-    public Cabrio(Engine engine, Tire tire) {
+    public Cabrio(Engine engine, Tire tire, Color color) {
         super(engine, tire);
         setCost(9000.00);
     }
@@ -15,5 +16,3 @@ public class Cabrio extends BaseCar {
         return "Cabrio model, " + this.getEngine().getEngineType() + ", " + this.getTire();
     }
 }
-
-
