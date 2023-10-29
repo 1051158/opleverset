@@ -2,12 +2,11 @@ package car;
 
 import engines.Engine;
 import tire.Tire;
-import color.Color;
 
 public class Sedan extends BaseCar {
 
-    public Sedan(Engine engine, Tire tire, Color color) {
-        super(engine, tire, color);
+    public Sedan(Engine engine, Tire tire) {
+        super(engine, tire);
         setCost(11000.00);
     }
 
