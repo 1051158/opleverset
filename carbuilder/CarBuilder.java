@@ -7,14 +7,18 @@ import color.*;
 
 public class CarBuilder {
     private Engine engine;
+    private TireFactory tireFactory;
     private Tire tire;
     private String type;
     private Color color;
+    private PaintFactory paintFactory;
 
     public CarBuilder() {
+        this.tireFactory = new TireFactory();
+        this.paintFactory = new PaintFactory();
         setEngine(new FossilEngine());
         setTire("Summer", RimStyle.classic);
-        setColor("Blue", Finish.matte);
+        setColor("Black", Finish.matte);
     }
 
     public CarBuilder setEngine(Engine engine) {
@@ -23,8 +27,12 @@ public class CarBuilder {
     }
 
     public CarBuilder setTire(String tireStyle, RimStyle rimStyle) {
-        TireFactory factory = new TireFactory();
-        this.tire = factory.createTire(tireStyle, rimStyle);
+        this.tire = tireFactory.createTire(tireStyle, rimStyle);
+        return this;
+    }
+
+    public CarBuilder setColor(String color, Finish finish) {
+        this.color = paintFactory.createColor(color, finish);
         return this;
     }
 
@@ -33,34 +41,20 @@ public class CarBuilder {
         return this;
     }
 
-    public CarBuilder setColor(String color, Finish finish) {
-        PaintFactory factory = new PaintFactory();
-        this.color = factory.createColor(color, finish);
-        return this;
-    }
-
-    public BaseCar build() {
-        BaseCar car;
-
+    public Car build() {
         switch (type) {
             case "Sedan":
-                car = new Sedan(engine, tire, color);
-                break;
+                return new Sedan(engine, tire, color);
             case "Cabrio":
-                car = new Cabrio(engine, tire, color);
-                break;
+                return new Cabrio(engine, tire, color);
             case "Coupe":
-                car = new Coupe(engine, tire, color);
-                break;
+                return new Coupe(engine, tire, color);
             case "Hatchback":
-                car = new Hatchback(engine, tire, color);
-                break;
+                return new Hatchback(engine, tire, color);
             case "SUV":
-                car = new SUV(engine, tire, color);
-                break;
+                return new SUV(engine, tire, color);
             default:
                 throw new IllegalArgumentException("Invalid car type");
         }
-        return car;
     }
 }
