@@ -48,7 +48,7 @@ public abstract class CarDecorator implements Car {
     }
 
     @Override
-    public void getPaint() {
-        decoratedCar.getPaint();
+    public String getPaint() {
+        return decoratedCar.getPaint();
     }
 }
