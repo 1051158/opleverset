@@ -6,12 +6,14 @@ import tire.*;
 
 public class CarBuilder {
     private Engine engine;
-    private TireFactory tireFactory;
+    private WinterTireFactory winterTireFactory;
+    private SummerTireFactory summerTireFactory;
     private Tire tire;
     private String type;
 
     public CarBuilder() {
-        this.tireFactory = new TireFactory();
+        this.winterTireFactory = new WinterTireFactory();
+        this.summerTireFactory = new SummerTireFactory();
         setEngine(new FossilEngine());
         setTire("Summer", RimStyle.classic);
     }
@@ -21,8 +23,17 @@ public class CarBuilder {
         return this;
     }
 
-    public CarBuilder setTire(String tireStyle, RimStyle rimStyle) {
-        this.tire = tireFactory.createTire(tireStyle, rimStyle);
+    public CarBuilder setTire(String tireSeason, RimStyle rimStyle) {
+        switch (tireSeason) {
+            case "Summer":
+                this.tire = summerTireFactory.createTire(rimStyle);
+                break;
+            case "Winter":
+                this.tire = winterTireFactory.createTire(rimStyle);
+                break;
+            default:
+                throw new IllegalArgumentException("Invalid season");
+        }
         return this;
     }
 

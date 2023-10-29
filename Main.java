@@ -1,7 +1,7 @@
-import car.Car;
-import carbuilder.CarBuilder;
-import engines.FossilEngine;
-import tire.RimStyle;
+import car.*;
+import carbuilder.*;
+import engines.*;
+import tire.*;
 
 public class Main {
     public static void main(String[] args) {
